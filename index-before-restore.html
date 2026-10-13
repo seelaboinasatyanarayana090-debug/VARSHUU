@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100b27">
+  <title>VARSHUVERSE &#10022; A Universe Made for Varshu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Varshuverse home"><span class="brand-mark">&#10022;</span>
+      VARSHU<span>VERSE</span></a>
+    <nav>
+      <a href="#journey">Journey</a><a href="#memories">Memories</a><a href="#letter">Letter</a>
+    </nav>
+    <button id="musicToggle" class="music-pill" type="button"><span class="music-dot"></span><span id="musicLabel">Play
+        our song</span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-orbit orbit-one"></div>
+      <div class="hero-orbit orbit-two"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE UNIVERSE, JUST FOR YOU <span
+            class="eyebrow-line"></span></p>
+        <h1>Hey, <em>Varshu.</em><br><span class="hero-line">This one is</span><br> <span class="gradient-text">all
+            yours.</span></h1>
+        <p class="hero-sub">One tiny universe filled with our chaos, our memories, and all the little things that make
+          you <em>you.</em></p>
+        <button class="primary-btn" id="enterBtn" type="button">Enter our universe <span>â†—</span></button>
+        <p class="microcopy">Made with love, stardust & a little Pandhi energy.</p>
+      </div>
+      <div class="hero-art reveal">
+        <div class="halo halo-a"></div>
+        <div class="halo halo-b"></div>
+        <div class="planet planet-main">
+          <div class="planet-shine"></div>
+          <div class="planet-ring"></div>
+        </div>
+        <div class="planet planet-small"></div>
+        <div class="floating-note note-one"><span>â™¡</span> our kind of chaos</div>
+        <div class="floating-note note-two"><span>âœ§</span> forever memory</div>
+        <div class="floating-polaroid">
+          <div class="photo-placeholder"><span>YOUR PHOTO</span><small>replace with a memory</small></div>
+          <p>the little things âœ¿</p>
+        </div>
+        <div class="orbit-label">16 Â· OCT Â· ALWAYS</div>
+      </div>
+      <div class="scroll-hint"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="intro section" id="journey">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 / OUR LITTLE GALAXY</p>
+        <h2>Every star has<br><em>a story.</em></h2>
+        <p>Tap a star. Unlock a memory. Collect the tiny pieces of us.</p>
+      </div>
+      <div class="journey-layout">
+        <div class="galaxy-map reveal" id="galaxyMap">
+          <div class="map-nebula"></div><svg class="constellation" viewBox="0 0 600 430" preserveAspectRatio="none"
+            aria-hidden="true">
+            <path d="M65 300 L150 210 L250 260 L320 125 L420 175 L520 75" />
+            <path d="M150 210 L180 95 L320 125 M250 260 L340 350 L420 175" />
+          </svg>
+          <button class="star-node star-1" data-star="0"
+            aria-label="Open star one"><span>&#10022;</span><small>01</small></button>
+          <button class="star-node star-2" data-star="1"
+            aria-label="Open star two"><span>&#10022;</span><small>02</small></button>
+          <button class="star-node star-3" data-star="2"
+            aria-label="Open star three"><span>&#10022;</span><small>03</small></button>
+          <button class="star-node star-4" data-star="3"
+            aria-label="Open star four"><span>&#10022;</span><small>04</small></button>
+          <button class="star-node star-5" data-star="4"
+            aria-label="Open star five"><span>&#10022;</span><small>05</small></button>
+          <button class="star-node star-6" data-star="5"
+            aria-label="Open star six"><span>&#10022;</span><small>06</small></button>
+          <div class="map-caption">THE CONSTELLATION OF US <span>âœ§</span></div>
+        </div>
+        <aside class="progress-card reveal">
+          <div class="progress-top"><span class="mini-label">YOUR JOURNEY</span><span id="progressCount">0 / 6</span>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <h3>Collect the<br><em>constellations.</em></h3>
+          <p>Each star holds a tiny chapter. Some are silly, some are soft, and all of them are ours.</p>
+          <div class="progress-list" id="progressList"><span>â—‹ Chaos chronicles</span><span>â—‹ Little
+              things</span><span>â—‹ Golden days</span></div>
+          <button class="secondary-btn" id="continueBtn" type="button">Continue journey <span>â†’</span></button>
+          <button class="text-btn" id="resetBtn" type="button">Start fresh</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="memories section" id="memories">
+      <div class="section-heading centered reveal">
+        <p class="eyebrow">02 / THE MEMORY WALL</p>
+        <h2>Little moments.<br><em>Big feelings.</em></h2>
+        <p>Real photos make this universe yours. Add your favourite moments below.</p>
+      </div>
+      <div class="filter-row reveal" role="group" aria-label="Filter memory albums">
+        <button class="filter-btn active" data-filter="all">All memories</button><button class="filter-btn"
+          data-filter="funny-moments">Chaos chronicles</button><button class="filter-btn" data-filter="selfies">Selfie
+          club</button><button class="filter-btn" data-filter="favorite-memories">Core memories</button><button
+          class="filter-btn" data-filter="special-days">Golden days</button>
+      </div>
+      <div class="memory-grid" id="memoryGrid">
+        <article class="memory-card memory-empty">
+          <div class="empty-icon">âœ§</div>
+          <h3>Your memories go here</h3>
+          <p>Add photos to the albums in <code>script.js</code> and this wall will fill with your moments.</p>
+        </article>
+      </div>
+      <p class="gallery-footnote">A little reminder: the best memories were never about perfect pictures.</p>
+    </section>
+
+    <section class="letter-section section" id="letter">
+      <div class="letter-orb"></div>
+      <div class="letter-wrap reveal">
+        <p class="eyebrow">03 / FROM SATYA, WITH LOVE</p>
+        <h2>For my favourite<br><em>Pandhi.</em> â™¡</h2>
+        <div class="letter-paper">
+          <div class="paper-stamp">FOR<br>VARSHU<br><span>&#10022;</span></div>
+          <p class="letter-date">A NOTE FROM THE HEART</p>
+          <div id="letterText" class="letter-text"></div>
+          <button class="secondary-btn" id="readLetterBtn" type="button">Read my letter <span>â™¡</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale section" id="finale">
+      <div class="finale-stars" aria-hidden="true">&#10022;ã€€Â·ã€€âœ§ã€€Â·ã€€&#10022;ã€€Â·ã€€âœ§ã€€Â·ã€€&#10022;</div>
+      <p class="eyebrow">THE LAST LITTLE SECRET</p>
+      <h2>Some people feel<br>like <em>home.</em></h2>
+      <p class="finale-copy">Oye Varshu, oka chinna question!<br><strong>Nee face lo automatic ga smile teppinche person
+          evaru? ðŸ‘€â¤ï¸</strong></p>
+      <div class="answer-row"><button class="answer-btn" data-answer="wrong">B Â· Food ðŸ•</button><button
+          class="answer-btn correct" data-answer="correct">A Â· Satya ðŸ«¶</button><button class="answer-btn"
+          data-answer="wrong">C Â· Sleep ðŸ˜´</button></div>
+      <p id="answerFeedback" class="answer-feedback" aria-live="polite"></p>
+      <div id="finalMessage" class="final-message" hidden>
+        <div class="firework">âœ§ &#10022; âœ§</div>
+        <h3>Nuvve naa favourite memory, Varshu.</h3>
+        <p>Naa face meedha automatic ga smile theppinche person nuvve. Mana friendship naaku eppatiki special. Nuvvu,
+          nenu, mana memories â€” forever and ever! â¤ï¸âœ¨</p><button class="primary-btn" id="replayBtn" type="button">Replay
+          our universe â†»</button>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home"><span class="brand-mark">&#10022;</span> VARSHU<span>VERSE</span></a>
+    <p>One universe. A million little memories. <span>Made by Satya â™¡</span></p><a href="#home" class="back-top">BACK TO
+      THE STARS â†‘</a>
+  </footer>
+  <audio id="bgm" src="assets/audio/varshu-bgm.mp3" loop preload="none"></audio>
+
+  <div class="modal" id="starModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel"><button class="modal-close" data-close-modal aria-label="Close">Ã—</button>
+      <p class="eyebrow" id="modalEyebrow">A CHAPTER OF US</p>
+      <div class="modal-star">&#10022;</div>
+      <h2 id="modalTitle">A little memory</h2>
+      <p id="modalBody"></p>
+      <div class="modal-photo" id="modalPhoto" hidden></div><button class="primary-btn" id="collectBtn">Collect this
+        star &#10022;</button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/music/our-song.mp3" type="audio/mpeg">
+</audio>
+</body>
+
+</html>
+
